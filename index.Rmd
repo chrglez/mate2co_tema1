@@ -1,0 +1,274 @@
+---
+title: "Matemáticas para la Economía II"
+subtitle: "Tema 1</br>Funciones reales de varias variables"
+author: "christian González"
+institute: "Dpto. Métodos Cuantitativos, ULPGC"
+date: "Curso 20/21"
+output:
+  xaringan::moon_reader:
+    mathjax: "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML"
+    lib_dir: libs
+    css: ["rutgers", "rutgers-fonts", "./custom.css"]
+    nature:
+      beforeInit: "http://www.jvcasillas.com/ru_xaringan/js/ru_xaringan.js"
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+    includes:
+      in_header: "header.html"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+
+options(htmltools.dir.version = FALSE)
+```
+---
+
+class:  middle
+
+# Tema 1: Funciones reales de varias variables
+
+1. Funciones de varias variables
+
+2. Dominio y curvas de nivel
+
+3. Límites y continuidad de funciones de varias variables
+
+---
+
+class: middle, center, inverse
+
+# 1. Funciones de varias variables
+
+---
+
+
+
+## Nociones topológicas en $\mathbb{R}^n$
+
+$n=1,\, \mathbb{R}$ es la recta unidimensional
+
+.center2[
+```{r,engine='tikz'}
+  \begin{tikzpicture}
+    \draw [<->](-3,0) -- (3,0);
+    \foreach \i in {-2,...,2} % numbers on line
+      \draw (\i,0.1) -- + (0,-0.2) node[below] {$\i$}; % tick and their labels
+  \node [above] at (0,0.2) {${\rm I\!R}$};
+  \node [below] at (3,-0.1) {$\infty$};
+  \node [below] at (-3,-0.1) {$-\infty$};
+  \end{tikzpicture}
+```
+]
+
+---
+
+## Nociones topológicas en $\mathbb{R}^n$ (cont.)
+
+$n=2,\, \mathbb{R}^2$ es el plano real
+
+$$n=2\rightarrow \mathbb{R}^2 = \mathbb{R}\times \mathbb{R} =\left\{(x_1,x_2):x_i\in\mathbb{R},i=1,2\right\}$$
+
+.center[![Plano cartesiano](https://www.varsitytutors.com/assets/vt-hotmath-legacy/hotmath_help/topics/cartesian-plane/example-1.gif)
+
+[Fuente: www.varsitytutors.com](https://www.varsitytutors.com/assets/vt-hotmath-legacy/hotmath_help/topics/cartesian-plane/example-1.gif)]
+
+---
+
+## Nociones topológicas en $\mathbb{R}^n$ (cont.)
+
+$n=3,\, \mathbb{R}^3$ es el espacio real tridimensional
+
+$$n=3\rightarrow \mathbb{R}^3 = \mathbb{R}\times \mathbb{R} \times \mathbb{R} =\left\{(x_1,x_2, x_3):x_i\in\mathbb{R},i=1,2,3\right\}$$
+---
+
+## Nociones topológicas en $\mathbb{R}^n$ (cont.)
+
+En general para $n\in \mathbb{N},\, \mathbb{R}^n$ es un espacio n-dimensional
+
+$$\mathbb{R}^n = \mathbb{R}\times \cdots \times \mathbb{R} =\left\{(x_1,\ldots, x_n):x_i\in\mathbb{R},i=1,\ldots,n\right\}$$
+
+- Vector en $\mathbb{R}^n$
+
+$$\vec{x}=(x_1,\ldots, x_n) \rightarrow \begin{pmatrix}x_1\\ \vdots\\ x_n\end{pmatrix}$$
+
+---
+
+## Operaciones con vectores
+
+### Suma de vectores
+
+$$\vec{x},\vec{y}\in \mathbb{R}^n,\, \vec{x}=(x_1,\ldots, x_n),\, \vec{y}=(y_1,\ldots, y_n)$$
+$$\vec{x}+\vec{y}=(x_1+y_1,\ldots, x_n+y_n)$$
+.pull-left[
+![vectores](http://www2.montes.upm.es/dptos/digfa/cfisica/magnitudes/operaciones1_files/suma1.gif)
+]
+.pull-right[
+![Suma de vectores](http://www2.montes.upm.es/dptos/digfa/cfisica/magnitudes/operaciones1_files/suma2.gif)
+]
+.center[
+[Fuente: www2.montes.upm.es](http://www2.montes.upm.es/dptos/digfa/cfisica/magnitudes/operaciones1.htm)
+]
+
+---
+
+## Operaciones con vectores (cont.)
+
+### Producto de un escalar por un vector
+
+$$\lambda\in \mathbb{R},\, \vec{x}\in \mathbb{R}^n,\, \vec{x}=(x_1,\ldots, x_n)$$
+$$\lambda\vec{x}=\lambda (x_1,\ldots, x_n) =( \lambda x_1,\ldots, \lambda x_n)$$
+.center[
+![producto de un escalar por un vector](http://www.xtec.cat/~jbartrol/vectores/gif/pr_esc00.gif)
+
+[Fuente: www.xtec.cat](http://www.xtec.cat/~jbartrol/vectores/act17.html)
+]
+
+
+---
+
+## Operaciones con vectores (cont.)
+
+### Combinación lineal de vectores
+
+$$\vec{z}=\alpha\vec{x}+\beta \vec{y}\in \mathbb{R}^n$$
+$$\vec{z}=\alpha\vec{x}+\beta \vec{y} = \alpha (x_1,\ldots, x_n) + \beta (y_1,\ldots, y_n)= (\alpha x_1,\ldots, \alpha x_n) +  (\beta y_1,\ldots, \beta y_n) = (\alpha x_1 + \beta y_1,\ldots, \alpha x_n + \beta y_n)$$
+.center[
+![producto de un escalar por un vector](http://www.xtec.cat/~jbartrol/vectores/gif/com_lin1.gif)
+
+[Fuente: www.xtec.cat](http://www.xtec.cat/~jbartrol/vectores/act18.html)
+]
+
+---
+
+## Operaciones con vectores (cont.)
+
+### Producto escalar de vectores
+
+$$\vec{x},\vec{y}\in \mathbb{R}^n,\, \vec{x}=(x_1,\ldots, x_n),\, \vec{y}=(y_1,\ldots, y_n)$$
+
+$$\langle\vec{x},\vec{y}\rangle = \vec{x}=(x_1,\ldots, x_n)\begin{pmatrix}x_1\\ \vdots\\ x_n\end{pmatrix} = x_1y_1+\cdots+x_ny_n$$
+
+---
+## Operaciones con vectores (cont.)
+
+### Norma euclídea
+
+
+$$\vec{x}\in \mathbb{R}^n,\, \vec{x}=(x_1,\ldots, x_n)$$
+$$\lVert\vec{x}\rVert=\sqrt{x_1^2+\ldots+x_n^2}=\sqrt{\sum^n_{i=1}x^2_i}$$
+.center[
+![producto de un escalar por un vector](http://aula.educa.aragon.es/datos/AGS/Matematicas/unidad04/images/pic103.jpg)
+
+[Fuente:aula.educa.aragon.es](http://aula.educa.aragon.es/datos/AGS/Matematicas/unidad04/page_08.htm)
+]
+
+---
+background-image: url(https://cdn.kastatic.org/ka-perseus-images/6ade290db694921cc465883fb070d8a1dbb3447e.png)
+background-position: 70% 67%
+background-size: 190pt
+
+## Operaciones con vectores (cont.)
+
+### Norma euclídea (cont.)
+
+#### Propiedades
+
+1. $\lVert\vec{x}\rVert\geq 0,\quad \lVert\vec{x}\rVert=0 \iff \vec{x}=\vec{0}$
+
+2. $\lVert\lambda \vec{x}\rVert = \lambda \lVert \vec{x}\rVert$
+
+3. $\lVert\vec{x} + \vec{y}\rVert \leq  \lVert \vec{x}\rVert + \lVert \vec{y}\rVert$
+
+4. $\left\lVert\frac{\vec{x}}{\lVert\vec{x}\rVert}\right\rVert = 1,\, \forall \vec{x}\neq \vec{0}$
+
+
+---
+
+## Operaciones con vectores (cont.)
+
+### Distancia euclídea (cont.)
+
+$$\vec{x},\vec{y}\in \mathbb{R}^n,\, \vec{x}=(x_1,\ldots, x_n),\, \vec{y}=(y_1,\ldots, y_n)$$
+
+  $$d(\vec{x},\vec{y})=\lVert\vec{x}-\vec{y}\rVert = \sqrt{(x_1-y_1)^2 + \ldots (x_n-y_n)^2 } = \sqrt{\sum^n_{i=1}(x_i-y_i)^2}$$
+.center[
+![producto de un escalar por un vector](https://upload.wikimedia.org/wikipedia/commons/2/24/Vector_subtraction.svg)
+
+[Fuente:commons.wikimedia.org](https://upload.wikimedia.org/wikipedia/commons/2/24/Vector_subtraction.svg)
+]
+---
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/bf/TriangleInequality.PNG)
+background-position: 50% 67%
+background-size: 150pt
+
+## Operaciones con vectores (cont.)
+
+### Distancia euclídea (cont.)
+
+#### Propiedades
+
+1. $d(\vec{x},\vec{y})\geq 0$
+
+2. $d(\vec{x},\vec{y}) = 0 \iff \vec{x}=\vec{y}$
+
+3. $d(\vec{x},\vec{y}) =  d(\vec{y},\vec{x})$
+
+4. $d(\vec{x},\vec{y}) \leq  d(\vec{x},\vec{z}) + d(\vec{z},\vec{y})$
+
+---
+
+## Bolas en $\mathbb{R}^n$
+
+- Bola abierta con centro en $\vec{x}_0\in \mathbb{R}^n$ y radio $r\in \mathbb{R}$
+
+$$B(\vec{x}_0,r) = \{\vec{x}\in\mathbb{R}^n:d(\vec{x},\vec{x}_0)<r\}$$
+- Bola cerrada con centro en $\vec{x}_0\in \mathbb{R}^n$ y radio $r\in \mathbb{R}$
+
+$$\overline{B}(\vec{x}_0,r) = \{\vec{x}\in\mathbb{R}^n:d(\vec{x},\vec{x}_0)\leq r\}$$
+
+
+---
+
+## Bolas en $\mathbb{R}^n$ (cont.)
+
+### $n=1$
+
+- Bola abierta con centro en $x_0\in \mathbb{R}$ y radio $r\in \mathbb{R}$
+
+$$B(x_0,r) = \{x\in\mathbb{R}:d(x,x_0)<r\} = (x-x_0, x+x_0)$$
+```{r, engine ='tikz'}
+\usetikzlibrary{arrows}
+\begin{tikzpicture}
+\draw[<->, thick] (-3,0) -- (3,0);
+
+\foreach \x/\xtext in {-1.8/$x_0-r$,0/$x_0$,1.8/$x_0+r$}
+    \draw[thick] (\x,2pt) -- (\x,-2pt) node[below] {\xtext};
+
+\draw[(-), thick, blue] (-1.8,0) -- (1.8,0);
+\draw (-4.25,0) node {$B(x_0,r)$};
+\end{tikzpicture}
+
+```
+
+
+- Bola cerrada con centro en $x_0\in \mathbb{R}$ y radio $r\in \mathbb{R}$
+
+$$\overline{B}(x_0,r) = \{x\in\mathbb{R}:d(x,x_0)\leq r\} = [x-x_0, x+x_0]$$
+
+```{r, engine ='tikz'}
+\usetikzlibrary{arrows}
+\begin{tikzpicture}
+\draw[<->, thick] (-3,0) -- (3,0);
+
+\foreach \x/\xtext in {-1.8/$x_0-r$,0/$x_0$,1.8/$x_0+r$}
+    \draw[thick] (\x,2pt) -- (\x,-2pt) node[below] {\xtext};
+
+\draw[{[-]}, thick, blue] (-1.8,0) -- (1.8,0);
+\draw (-4.25,0) node {$\overline{B}(x_0,r)$};
+\end{tikzpicture}
+
+```
+
