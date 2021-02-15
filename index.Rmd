@@ -1,7 +1,7 @@
 ---
 title: "Matemáticas para la Economía II"
 subtitle: "Tema 1</br>Funciones reales de varias variables"
-author: "christian González"
+author: "Christian González"
 institute: "Dpto. Métodos Cuantitativos, ULPGC"
 date: "Curso 20/21"
 output:
@@ -24,7 +24,7 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 
 options(htmltools.dir.version = FALSE)
 ```
----
+
 
 class:  middle
 
@@ -71,9 +71,27 @@ $n=2,\, \mathbb{R}^2$ es el plano real
 
 $$n=2\rightarrow \mathbb{R}^2 = \mathbb{R}\times \mathbb{R} =\left\{(x_1,x_2):x_i\in\mathbb{R},i=1,2\right\}$$
 
-.center[![Plano cartesiano](https://www.varsitytutors.com/assets/vt-hotmath-legacy/hotmath_help/topics/cartesian-plane/example-1.gif)
 
-[Fuente: www.varsitytutors.com](https://www.varsitytutors.com/assets/vt-hotmath-legacy/hotmath_help/topics/cartesian-plane/example-1.gif)]
+```{r,engine='tikz', fig.ext = 'svg', fig.width=2, fig.align='center'}
+\begin{tikzpicture}[scale=3,cap=round]
+% Styles
+\tikzstyle{axes}=[]
+
+\begin{scope}[style=axes]
+  \draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$} coordinate(x axis);
+  \draw[->] (0,-1.5) -- (0,1.5) node[above] {$y$} coordinate(y axis);
+
+  \foreach \x/\xtext in {-1, -.5/-\frac{1}{2}, .5/\frac{1}{2}, 1}
+    \draw[xshift=\x cm] (0pt,1pt) -- (0pt,-1pt) node[below,fill=white] {$\xtext$};
+
+  \foreach \y/\ytext in {-1, -.5/-\frac{1}{2}, .5/\frac{1}{2}, 1}
+    \draw[yshift=\y cm] (1pt,0pt) -- (-1pt,0pt) node[left,fill=white] {$\ytext$};
+
+\end{scope}
+\end{tikzpicture}
+```
+
+
 
 ---
 
@@ -82,6 +100,39 @@ $$n=2\rightarrow \mathbb{R}^2 = \mathbb{R}\times \mathbb{R} =\left\{(x_1,x_2):x_
 $n=3,\, \mathbb{R}^3$ es el espacio real tridimensional
 
 $$n=3\rightarrow \mathbb{R}^3 = \mathbb{R}\times \mathbb{R} \times \mathbb{R} =\left\{(x_1,x_2, x_3):x_i\in\mathbb{R},i=1,2,3\right\}$$
+
+```{r, engine='tikz', fig.ext = 'svg', fig.width=2, fig.align='center'}
+\begin{tikzpicture}[x=1cm, y=1cm, z=-0.6cm]
+    % Axes
+    \draw [->] (0,0,0) -- (4,0,0) node [right] {$x$};
+    \draw [->] (0,0,0) -- (0,4,0) node [left] {$y$};
+    \draw [->] (0,0,0) -- (0,0,4) node [left] {$z$};
+    % Vectors
+    \draw [->, thick] (0,0,0) -- (2,2,0);
+    \draw [->, thick] (0,0,0) -- (2,0,1);
+    % Ticks
+        \foreach \i in {1,2}
+    {
+    \draw (-0.1,\i,0) -- ++ (0.2,0,0);
+    \draw (\i,-0.1,0) -- ++ (0,0.2,0);
+    \draw (-0.1,0,\i) -- ++ (0.2,0,0);
+    }
+    % Dashed lines
+    \draw [loosely dashed]
+        (0,2,0) -- (2,2,0) -- (2,0,0)
+        (0,0,1) -- (2,0,1) -- (2,0,0)
+        ;
+    % Labels
+     \node [right] at (2,2,0) {$\begin{bmatrix}
+                                2\\2\\0
+                               \end{bmatrix}$};
+   \node [below] at (2,0,1) {$\begin{bmatrix}
+                               2\\0\\1
+                              \end{bmatrix}$};
+
+\end{tikzpicture}
+```
+
 ---
 
 ## Nociones topológicas en $\mathbb{R}^n$ (cont.)
@@ -114,7 +165,7 @@ $$\vec{x}+\vec{y}=(x_1+y_1,\ldots, x_n+y_n)$$
 
 ---
 
-## Operaciones con vectores (cont.)
+## Operaciones con vectores (cont.) 
 
 ### Producto de un escalar por un vector
 
@@ -271,4 +322,206 @@ $$\overline{B}(x_0,r) = \{x\in\mathbb{R}:d(x,x_0)\leq r\} = [x-x_0, x+x_0]$$
 \end{tikzpicture}
 
 ```
+---
 
+## Bolas en $\mathbb{R}^n$ (cont.)
+
+### $n=2$
+
+
+
+- Bola abierta con centro en $\vec{x}_0=(x_0,y_0)\in \mathbb{R}^2$ y radio $r\in \mathbb{R}$
+
+$$B(\vec{x}_0,r) = \{x\in\mathbb{R}^2:d(\vec{x},\vec{x}_0)<r\} = \{\vec{x}=(x,y)\in \mathbb{R}^2:(x-x_0)^2+(y-y_0)^2<r^2\}$$
+
+- Bola cerrada con centro en $\vec{x_0}=(x_0,y_0)\in \mathbb{R}^2$ y radio $r\in \mathbb{R}$
+
+$$\overline{B}(\vec{x}_0,r) = \{x\in\mathbb{R}^2:d(\vec{x},\vec{x}_0)\leq r\} = \{\vec{x}=(x,y)\in \mathbb{R}^2:(x-x_0)^2+(y-y_0)^2\leq r^2\}$$
+
+```{r,engine='tikz', fig.ext = 'svg', out.width='55%', fig.align='center',cache = TRUE}
+\begin{tikzpicture}[scale=2]
+% Styles
+\tikzstyle{axes}=[]
+
+\begin{scope}[style=axes]
+  \draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$} coordinate(x axis);
+  \draw[->] (0,-1.5) -- (0,1.5) node[above] {$y$} coordinate(y axis);
+
+  \foreach \x/\xtext in {-1, -.5/-\frac{1}{2}, .5/\frac{1}{2}, 1}
+    \draw[xshift=\x cm] (0pt,1pt) -- (0pt,-1pt) node[below,fill=white] {$\xtext$};
+
+  \foreach \y/\ytext in {-1, -.5/-\frac{1}{2}, .5/\frac{1}{2}, 1}
+    \draw[yshift=\y cm] (1pt,0pt) -- (-1pt,0pt) node[left,fill=white] {$\ytext$};
+
+\end{scope}
+
+\filldraw [orange!50!white, draw=orange!50!black] (0.5,0.5) circle (0.3);
+\node[right] at (0.5,0.5) {$(x_0,y_0)$};
+\filldraw [gray] (0.5,0.5) circle (0.01);
+\draw [dashed, thin](0.2,0.5) -- (0.5,0.5);
+\node[above] at (0.37,0.5) {r};
+\node[right] at (1,1) {$\overline{B}(\vec{x}_0,r)$};
+
+
+\begin{scope}[style=axes]
+  \draw[->] (3.5,0) -- (6.5,0) node[right] {$x$} coordinate(x axis);
+  \draw[->] (5,-1.5) -- (5,1.5) node[above] {$y$} coordinate(y axis);
+
+  \foreach \x/\xtext in {4/-1, 4.5/-\frac{1}{2}, 5.5/\frac{1}{2}, 6/1}
+    \draw[xshift=\x cm] (5pt,1pt) -- (5pt,-1pt) node[below,fill=white] {$\xtext$};
+
+  \foreach \y/\ytext in {-1/-1, -0.5/-\frac{1}{2}, 0.5/\frac{1}{2}, 1/1}
+    \draw[xshift = 5cm,  yshift=\y cm] (1pt,0pt) -- (-1pt,0pt) node[left,fill=white] {$\ytext$};
+
+\end{scope}
+
+\filldraw [orange!50!white, draw=orange!50!black, dashed] (5.5,0.5) circle (0.3);
+\node[right] at (5.5,0.5) {$(x_0,y_0)$};
+\filldraw [gray] (5.5,0.5) circle (0.01);
+\draw [dashed, thin](5.2,0.5) -- (5.5,0.5);
+\node[above] at (5.37,0.5) {r};
+\node[right] at (6,1) {$B(\vec{x}_0,r)$};
+\end{tikzpicture}
+```
+---
+
+## Bolas en $\mathbb{R}^n$ (cont.)
+
+### $n=3$
+
+
+
+- Bola abierta con centro en $\vec{x}_0=(x_0,y_0,z_0)\in \mathbb{R}^3$ y radio $r\in \mathbb{R}$
+
+$$B(\vec{x}_0,r) = \{x\in\mathbb{R}^3:d(\vec{x},\vec{x}_0)<r\} = \{\vec{x}=(x,y,z)\in \mathbb{R}^3:(x-x_0)^2+(y-y_0)^2+(z-z_0)^2<r^2\}$$
+
+- Bola cerrada con centro en $\vec{x_0}=(x_0,y_0)\in \mathbb{R}^3$ y radio $r\in \mathbb{R}$
+
+$$B(\vec{x}_0,r) = \{x\in\mathbb{R}^3:d(\vec{x},\vec{x}_0)\leq r\} = \{\vec{x}=(x,y,z)\in \mathbb{R}^3:(x-x_0)^2+(y-y_0)^2+(z-z_0)^2\leq r^2\}$$
+
+```{r, engine='tikz', fig.ext = 'svg', out.width='25%', fig.align='center',cache = TRUE}
+\begin{tikzpicture}
+  \shade[ball color = gray!40, opacity = 0.4] (0,0) circle (2cm);
+  \draw (0,0) circle (2cm);
+  \draw (-2,0) arc (180:360:2 and 0.6);
+  \draw[dashed] (2,0) arc (0:180:2 and 0.6);
+  \fill[fill=black] (0,0) circle (1pt);
+  \draw[dashed] (0,0 ) -- node[above]{$r$} (2,0);
+
+
+  \shade[ball color = gray!40, opacity = 0.4, xshift=5cm] (0,0) circle (2cm);
+  \draw [xshift=5cm, dashed](0,0) circle (2cm);
+  \draw [xshift=5cm, dashed] (-2,0) arc (180:360:2 and 0.6);
+  \draw[dashed, xshift=5cm] (2,0) arc (0:180:2 and 0.6);
+  \fill[fill=black, xshift=5cm] (0,0) circle (1pt);
+  \draw[dashed, xshift=5cm] (0,0 ) -- node[above]{$r$} (2,0);
+\end{tikzpicture}
+```
+---
+
+## Definiciones topológicas
+
+Sea $A\in \mathbb{R}^n$
+
+- Conjunto complementario
+> $A^c=\{x\in \mathbb{R}^n:x\notin A\}= \mathbb{R}^n-A$
+
+- [Punto interior](http://en.wikipedia.org/wiki/Interior_points) 
+> $\vec{x}_0\in Int(A)\iff\exists r>0:B(\vec{x}_0,r)\subseteq A$
+
+- [Punto exterior](http://en.wikipedia.org/wiki/Exterior_%28topology%29)
+> $\vec{x}_0\in Ext(A)\iff\exists r>0:B(\vec{x}_0,r)\cap A = \emptyset \iff \vec{x}_0\in Int(A^c)$
+
+- [Punto frontera](http://en.wikipedia.org/wiki/Boundary_%28topology%29)
+> $\vec{x}_0\in Fr(A) \iff \forall r>0: B(\vec{x}_0,r)\cap A \neq \emptyset \land B(\vec{x}_0,r)\cap A^c \neq \emptyset$
+
+---
+
+class: middle, center
+
+## Definiciones topológicas (cont.)
+
+![Puntos interiores, exteriores y fronteras](http://bibliotecadigital.ilce.edu.mx/sites/ciencia/volumen2/ciencia3/075/imgs/75_24.gif)
+
+---
+
+## Definiciones topológicas (cont.)
+
+Sea $A\in \mathbb{R}^n$
+
+- Conjunto abierto
+> $A=Int(A)$
+
+- Conjunto cerrado
+> $A^c = Int(A^c) \iff A = Int(A)\cup Fr(A)$
+
+- Conjunto acotado
+> $\forall \vec{x}\in A \implies \exists r>0: \lVert \vec{x}_0 \rVert\leq r\implies \exists r>0: A\subseteq B(\vec{x},r)$ 
+
+- Conjunto compacto
+> Si es cerrado y acotado
+
+---
+
+## Funciones reales de varias variables
+
+<ru-blockquote> Una función $f$ real de varias variables es una operación que asigna a un vector n-dimensional  $\vec{x}$      de cierto conjunto un valor real $f(\vec{x})$
+</ru-blockquote>
+
+$$\begin{array}[c]
+ ff:D\subseteq\mathbb{R}^n\to\mathbb{R}\\
+\vec{x}=(x_1,\ldots,x_n)\to f(\vec{x})
+\end{array}$$
+
+---
+
+
+## Funciones reales de varias variables (cont.)
+
+Sean $f,g:D\subseteq \mathbb{R}^n\to R, \, h:E\subseteq \mathbb{R}^n\to R,\, \alpha,\beta\in \mathbb{R}$
+
+- Combinación lineal e funciones
+> $(\alpha f +\beta g)(\vec{x})=\alpha f(\vec{x}) +\beta g(\vec{x})$
+
+- Producto de funciones
+> $(f\cdot g)(\vec{x})=f(\vec{x})\cdot g(\vec{x})$
+
+- Cociente de funciones
+> $\frac{f}{g}(\vec{x})=\frac{f(\vec{x})}{g(\vec{x})}, \, \forall \vec{x}\in D$ tal que $g(\vec{x})\neq 0$
+
+- Composición de funciones
+$(h\circ f)(\vec{x})=f(h(\vec{x})) , \, \forall \vec{x}\in D$ tal que $f(\vec{x})\in E$
+
+---
+
+## Dominio
+
+<ru-blockquote> Es el conjunto de puntos $\vec{x}\in \mathbb{R}^n$ donde la función está definida. Es decir, el conjunto de puntos $\vec{x}\in \mathbb{R}^n$ para los que $f(\vec{x})$ es un valor real.
+</ru-blockquote>
+
+$$Dom(f)=\{\vec{x}\in \mathbb{R}^n :\exists y\in \mathbb{R}\mbox{ tal que } y=f(\vec{x})\}$$
+
+---
+
+## Gráfica
+
+<ru-blockquote> Es el conjunto de puntos $(x_1,\ldots,x_n,z)\in \mathbb{R}^{n+1}$ del espacio n+1 dimensional, tal que $z=f(x_1,\ldots,x_n)\in \mathbb{R}$
+</ru-blockquote>
+
+$$Graf(f)=\{(x_1,\ldots,x_n,z)\in \mathbb{R}^{n+1}:z=f(x_1,\ldots,x_n)\}\subseteq \mathbb{R}^{n+1}$$
+
+---
+
+
+## Curvas de nivel
+
+<ru-blockquote> Se denomina conjunto de nivel $f$ al conjunto de puntos del espacio n-dimensional $(x_1,\ldots,x_n)\in \mathbb{R}^{n}$ tal que
+
+$$N_c(f)=\{(x_1,\ldots,x_n)\in \mathbb{R}^{n}:f(x_1,\ldots,x_n)=c\}\subseteq \mathbb{R}^{n}$$
+</ru-blockquote>
+
+
+
+---
+
+<iframe scrolling="no" title="Curvas de Nivel" src="https://www.geogebra.org/material/iframe/id/jy7znQM5/width/1366/height/671/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="1366px" height="671px" style="border:0px;"> </iframe>

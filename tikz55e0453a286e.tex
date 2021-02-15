@@ -1,0 +1,19 @@
+\documentclass{article}
+\include{preview}
+\usepackage[pdftex,active,tightpage]{preview}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+\begin{document}
+\begin{preview}
+%% TIKZ_CODE %%
+  \begin{tikzpicture}
+    \draw [<->](-3,0) -- (3,0);
+    \foreach \i in {-2,...,2} % numbers on line
+      \draw (\i,0.1) -- + (0,-0.2) node[below] {$\i$}; % tick and their labels
+  \node [above] at (0,0.2) {${\rm I\!R}$};
+  \node [below] at (3,-0.1) {$\infty$};
+  \node [below] at (-3,-0.1) {$-\infty$};
+  \end{tikzpicture}
+\end{preview}
+\end{document}
