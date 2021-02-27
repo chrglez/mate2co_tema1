@@ -14,8 +14,8 @@
 </font>
 <font id='cmr10' horiz-adv-x='0'>
 <font-face font-family='cmr10' units-per-em='1000' ascent='750' descent='250'/>
+<glyph unicode='¯' horiz-adv-x='500' vert-adv-y='500' glyph-name='macron' d='M430 559V590H69V559H430Z'/>
 <glyph unicode='1' horiz-adv-x='500' vert-adv-y='500' glyph-name='one' d='M294 640C294 664 294 666 271 666C209 602 121 602 89 602V571C109 571 168 571 220 597V79C220 43 217 31 127 31H95V0C130 3 217 3 257 3S384 3 419 0V31H387C297 31 294 42 294 79V640Z'/>
-<glyph unicode='ˆ' horiz-adv-x='500' vert-adv-y='500' glyph-name='circumflex' d='M250 694L116 558L134 540L250 642L365 540L383 558L250 694Z'/>
 </font>
 <font id='cmr7' horiz-adv-x='0'>
 <font-face font-family='cmr7' units-per-em='1000' ascent='750' descent='250'/>
@@ -78,10 +78,10 @@ text.f3 {font-family:cmr7;font-size:6.973848px}
 <path d='M127.757809-127.757809L210.6328-210.6328' stroke='#00f' fill='none' stroke-width='.3985' stroke-miterlimit='10' stroke-linecap='round'/>
 <path d='M212.398459-212.398459L208.921891-210.824231L210.703151-210.703151L210.824231-208.921891Z' fill='#00f'/>
 <path d='M212.398459-212.398459L208.921891-210.824231L210.703151-210.703151L210.824231-208.921891Z' stroke='#00f' fill='none' stroke-width='.398496' stroke-miterlimit='10' stroke-linecap='round'/>
-<text class='f2' x='128.391274' y='-127.758227' transform='matrix(1 0 0 1 46.04 -32.082)'>
-<tspan fill='#00f'>ˆ</tspan>
+<text class='f2' x='128.391274' y='-127.758227' transform='matrix(1 0 0 1 46.04 -33.344)'>
+<tspan fill='#00f'>¯</tspan>
 </text>
-<text class='f1' x='127.758227' y='-127.758227' transform='matrix(1 0 0 1 46.04 -32.082)'>
+<text class='f1' x='127.758227' y='-127.758227' transform='matrix(1 0 0 1 46.04 -33.344)'>
 <tspan fill='#00f'>x</tspan>
 </text>
 <path d='M127.757809-127.757809H209.7344' stroke='#f00' fill='none' stroke-width='.3985' stroke-miterlimit='10' stroke-linecap='round'/>
@@ -108,7 +108,7 @@ text.f3 {font-family:cmr7;font-size:6.973848px}
 <path d='M203.062622-218.33168L206.304821-218.331685L206.304817-215.089485' stroke='#000' fill='none' stroke-width='.3985' stroke-miterlimit='10'/>
 <path d='M203.237985-222.078332L210.050489-215.261922' stroke='#000' fill='none' stroke-width='.3985' stroke-miterlimit='10'/>
 <text class='f0' x='127.758227' y='-127.758227' transform='matrix(.7071 -.7071 .7071 .7071 154.088 6.060364)'>||</text>
-<text class='f2' x='133.926091' y='-127.758227' transform='matrix(.7071 -.7071 .7071 .7071 154.088 6.060364)'>ˆ</text>
+<text class='f2' x='133.926091' y='-127.758227' transform='matrix(.7071 -.7071 .7071 .7071 154.088 6.060364)'>¯</text>
 <text class='f1' x='133.293044' y='-127.758227' transform='matrix(.7071 -.7071 .7071 .7071 154.088 6.060364)'>x</text>
 <text class='f0' x='138.986962' y='-127.758227' transform='matrix(.7071 -.7071 .7071 .7071 154.088 6.060364)'>||</text>
 </g>

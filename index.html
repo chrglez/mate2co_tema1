@@ -32,14 +32,14 @@ class:  middle
 
 # Tema 1: Funciones reales de varias variables
 
-1. Funciones de varias variables
+[1. Funciones de varias variables](#apartado-1)
 
-2. Dominio y curvas de nivel
+[2. Dominio y curvas de nivel](#apartado-2)
 
-3. Límites y continuidad de funciones de varias variables
+[3. Límites y continuidad de funciones de varias variables](#apartado-3)
 
 ---
-
+name: apartado-1
 class: middle, center, inverse
 
 # 1. Funciones de varias variables
@@ -132,8 +132,7 @@ En general para `\(n\in \mathbb{N},\, \mathbb{R}^n\)` es un espacio n-dimensiona
 .center[
 ![producto de un escalar por un vector](http://www.xtec.cat/~jbartrol/vectores/gif/com_lin1.gif)
 
-[Fuente: www.xtec.cat](http://www.xtec.cat/~jbartrol/vectores/act18.html)
-]
+.small[[Fuente: www.xtec.cat](http://www.xtec.cat/~jbartrol/vectores/act18.html)]]
 
 ---
 
@@ -148,17 +147,17 @@ En general para `\(n\in \mathbb{N},\, \mathbb{R}^n\)` es un espacio n-dimensiona
 ---
 ## Operaciones con vectores (cont.)
 
-### Norma euclídea
+### Norma euclídea [&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="rfa" style="height:0.75em;fill:#cc0033;position:relative;"&gt;&lt;path d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"/&gt;&lt;/svg&gt;](https://www.geogebra.org/m/mnx3q4sm)
 
 
 `$$\vec{x}\in \mathbb{R}^n,\, \vec{x}=(x_1,\ldots, x_n)$$`
 `$$\lVert\vec{x}\rVert=\sqrt{x_1^2+\ldots+x_n^2}=\sqrt{\sum^n_{i=1}x^2_i}$$`
-&lt;img src="index_files/figure-html/unnamed-chunk-6-1.svg" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-6-1.svg" width="30%" style="display: block; margin: auto;" /&gt;
 
 
 ---
 background-image: url(https://cdn.kastatic.org/ka-perseus-images/6ade290db694921cc465883fb070d8a1dbb3447e.png)
-background-position: 70% 67%
+background-position: 80% 80%
 background-size: 190pt
 
 ## Operaciones con vectores (cont.)
@@ -167,6 +166,7 @@ background-size: 190pt
 
 #### Propiedades
 
+.pull-left[
 1. `\(\lVert\vec{x}\rVert\geq 0,\quad \lVert\vec{x}\rVert=0 \iff \vec{x}=\vec{0}\)`
 
 2. `\(\lVert\lambda \vec{x}\rVert = \lambda \lVert \vec{x}\rVert\)`
@@ -174,8 +174,12 @@ background-size: 190pt
 3. `\(\lVert\vec{x} + \vec{y}\rVert \leq  \lVert \vec{x}\rVert + \lVert \vec{y}\rVert\)`
 
 4. `\(\left\lVert\frac{\vec{x}}{\lVert\vec{x}\rVert}\right\rVert = 1,\, \forall \vec{x}\neq \vec{0}\)`
+]
 
+.pull-right[
+&lt;img src="index_files/figure-html/unnamed-chunk-7-1.svg" width="60%" style="display: block; margin: auto;" /&gt;
 
+]
 ---
 
 ## Operaciones con vectores (cont.)
@@ -185,15 +189,11 @@ background-size: 190pt
 `$$\vec{x},\vec{y}\in \mathbb{R}^n,\, \vec{x}=(x_1,\ldots, x_n),\, \vec{y}=(y_1,\ldots, y_n)$$`
 
   `$$d(\vec{x},\vec{y})=\lVert\vec{x}-\vec{y}\rVert = \sqrt{(x_1-y_1)^2 + \ldots (x_n-y_n)^2 } = \sqrt{\sum^n_{i=1}(x_i-y_i)^2}$$`
-.center[
-![producto de un escalar por un vector](https://upload.wikimedia.org/wikipedia/commons/2/24/Vector_subtraction.svg)
+&lt;img src="index_files/figure-html/unnamed-chunk-8-1.svg" width="30%" style="display: block; margin: auto;" /&gt;
 
-[Fuente:commons.wikimedia.org](https://upload.wikimedia.org/wikipedia/commons/2/24/Vector_subtraction.svg)
-]
+
 ---
-background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/bf/TriangleInequality.PNG)
-background-position: 50% 67%
-background-size: 150pt
+
 
 ## Operaciones con vectores (cont.)
 
@@ -208,6 +208,8 @@ background-size: 150pt
 3. `\(d(\vec{x},\vec{y}) =  d(\vec{y},\vec{x})\)`
 
 4. `\(d(\vec{x},\vec{y}) \leq  d(\vec{x},\vec{z}) + d(\vec{z},\vec{y})\)`
+
+
 
 ---
 
@@ -230,19 +232,19 @@ background-size: 150pt
 - Bola abierta con centro en `\(x_0\in \mathbb{R}\)` y radio `\(r\in \mathbb{R}\)`
 
 `$$B(x_0,r) = \{x\in\mathbb{R}:d(x,x_0)&lt;r\} = (x-x_0, x+x_0)$$`
-![](index_files/figure-html/unnamed-chunk-7-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-9-1.png)&lt;!-- --&gt;
 
 
 - Bola cerrada con centro en `\(x_0\in \mathbb{R}\)` y radio `\(r\in \mathbb{R}\)`
 
 `$$\overline{B}(x_0,r) = \{x\in\mathbb{R}:d(x,x_0)\leq r\} = [x-x_0, x+x_0]$$`
 
-![](index_files/figure-html/unnamed-chunk-8-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-10-1.png)&lt;!-- --&gt;
 ---
 
 ## Bolas en `\(\mathbb{R}^n\)` (cont.)
 
-### `\(n=2\)`
+### `\(n=2\)` [&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="rfa" style="height:0.75em;fill:#cc0033;position:relative;"&gt;&lt;path d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"/&gt;&lt;/svg&gt;](https://www.geogebra.org/m/mj4cqunw)
 
 
 
@@ -252,33 +254,45 @@ background-size: 150pt
 
 
 
+&lt;img src="index_files/figure-html/unnamed-chunk-11-1.svg" width="30%" style="display: block; margin: auto;" /&gt;
 
 
+---
+## Bolas en `\(\mathbb{R}^n\)` (cont.)
+
+### `\(n=2\)`
 
 
-
-- Bola cerrada con centro en `\(\vec{x_0}=(x_0,y_0)\in \mathbb{R}^2\)` y radio `\(r\in \mathbb{R}\)`
+- Bola cerrada con centro en `\(\vec{x}_0=(x_0,y_0)\in \mathbb{R}^2\)` y radio `\(r\in \mathbb{R}\)`
 
 `$$\overline{B}(\vec{x}_0,r) = \{x\in\mathbb{R}^2:d(\vec{x},\vec{x}_0)\leq r\} = \{\vec{x}=(x,y)\in \mathbb{R}^2:(x-x_0)^2+(y-y_0)^2\leq r^2\}$$`
 
 
 
-
+&lt;img src="index_files/figure-html/unnamed-chunk-12-1.svg" width="30%" style="display: block; margin: auto;" /&gt;
 
 
 ---
 
-&lt;iframe scrolling="no" title="Bolas en `\(R^2\)`" src="https://www.geogebra.org/material/iframe/id/mj4cqunw/width/1920/height/902/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="1920px" height="902px" style="border:0px;"&gt; &lt;/iframe&gt;
+
+
+
+## Bolas en `\(\mathbb{R}^n\)` (cont.)
+
+### `\(n=3\)` [&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="rfa" style="height:0.75em;fill:#cc0033;position:relative;"&gt;&lt;path d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"/&gt;&lt;/svg&gt;](https://www.geogebra.org/calculator/xventjta)
+
+
+- Bola abierta con centro en `\(\vec{x}_0=(x_0,y_0)\in \mathbb{R}^3\)` y radio `\(r\in \mathbb{R}\)`
+
+`$$B(\vec{x}_0,r) = \{x\in\mathbb{R}^3:d(\vec{x},\vec{x}_0)&lt; r\} = \{\vec{x}=(x,y,z)\in \mathbb{R}^3:(x-x_0)^2+(y-y_0)^2+(z-z_0)^2&lt; r^2\}$$`
+
+&lt;img src="index_files/figure-html/unnamed-chunk-13-1.svg" width="25%" style="display: block; margin: auto;" /&gt;
+
 ---
 
 ## Bolas en `\(\mathbb{R}^n\)` (cont.)
 
 ### `\(n=3\)`
-
-
-- Bola abierta con centro en `\(\vec{x_0}=(x_0,y_0)\in \mathbb{R}^3\)` y radio `\(r\in \mathbb{R}\)`
-
-`$$B(\vec{x}_0,r) = \{x\in\mathbb{R}^3:d(\vec{x},\vec{x}_0)&lt; r\} = \{\vec{x}=(x,y,z)\in \mathbb{R}^3:(x-x_0)^2+(y-y_0)^2+(z-z_0)^2&lt; r^2\}$$`
 
 - Bola cerrada con centro en `\(\vec{x_0}=(x_0,y_0)\in \mathbb{R}^3\)` y radio `\(r\in \mathbb{R}\)`
 
@@ -288,6 +302,9 @@ background-size: 150pt
 
 
 
+
+
+&lt;img src="index_files/figure-html/unnamed-chunk-15-1.svg" width="25%" style="display: block; margin: auto;" /&gt;
 ---
 
 ## Definiciones topológicas
@@ -295,7 +312,7 @@ background-size: 150pt
 Sea `\(A\in \mathbb{R}^n\)`
 
 - Conjunto complementario
-&gt; `\(A^c=\{x\in \mathbb{R}^n:x\notin A\}= \mathbb{R}^n-A\)`
+&gt; `\(A^c=\{\vec{x}\in \mathbb{R}^n:\vec{x}\notin A\}= \mathbb{R}^n-A\)`
 
 - [Punto interior](http://en.wikipedia.org/wiki/Interior_points) 
 &gt; `\(\vec{x}_0\in Int(A)\iff\exists r&gt;0:B(\vec{x}_0,r)\subseteq A\)`
@@ -364,7 +381,7 @@ Sean `\(f,g:D\subseteq \mathbb{R}^n\to R, \, h:E\subseteq \mathbb{R}^n\to R,\, \
 `\((h\circ f)(\vec{x})=f(h(\vec{x})) , \, \forall \vec{x}\in D\)` tal que `\(f(\vec{x})\in E\)`
 
 ---
-
+name: apartado-2
 class: middle, center, inverse
 
 # 2. Dominio y curvas de nivel
@@ -389,28 +406,47 @@ class: middle, center, inverse
 
 
 
-&lt;img src="index_files/figure-html/unnamed-chunk-12-1.svg" width="35%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-16-1.svg" width="35%" style="display: block; margin: auto;" /&gt;
 
 
 ---
 
 
-## Curvas de nivel
+## Curvas de nivel  [&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="rfa" style="height:0.75em;fill:#cc0033;position:relative;"&gt;&lt;path d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"/&gt;&lt;/svg&gt;](https://www.geogebra.org/m/nyqtnpp7)
 
 &lt;ru-blockquote&gt; Se denomina conjunto de nivel `\(f\)` al conjunto de puntos del espacio n-dimensional `\((x_1,\ldots,x_n)\in \mathbb{R}^{n}\)` tal que
 
 `$$N_c(f)=\{(x_1,\ldots,x_n)\in \mathbb{R}^{n}:f(x_1,\ldots,x_n)=c\}\subseteq \mathbb{R}^{n}$$`
 &lt;/ru-blockquote&gt;
 
+
+---
+class: center
+
+&lt;img src="index_files/figure-html/unnamed-chunk-17-1.svg" width="65%" style="display: block; margin: auto;" /&gt;
+
+
+
+
+
 ---
 
+
+&lt;img src="index_files/figure-html/unnamed-chunk-19-1.svg" width="65%" style="display: block; margin: auto;" /&gt;
+---
+&lt;img src="index_files/figure-html/unnamed-chunk-20-1.svg" width="65%" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+name: apartado-3
 class: middle, center, inverse
 
 # 3. Límites y continuidad
 
 ---
 
-## Límites [[&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="rfa" style="height:0.75em;fill:#cc0033;position:relative;"&gt;&lt;path d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"/&gt;&lt;/svg&gt;](https://www.geogebra.org/m/Sd6mNtpU#material/Kk3AmNmc)
+## Límites 
 
 - El límite de `\(f:D\subseteq \mathbb{R}^n\to\mathbb{R}\)` en el punto `\(\vec{x}_0\in\mathbb{R}^n\)` es el `\(L\in \mathbb{R}\)` si y solamente si se cumple lo siguiente
 
@@ -433,14 +469,18 @@ background-image: url(http://mathonline.wdfiles.com/local--files/limits-of-funct
 
 ## Límites (cont.)
 
-### Límite por trayectorias
+### Límite por trayectorias [&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="rfa" style="height:0.75em;fill:#cc0033;position:relative;"&gt;&lt;path d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"/&gt;&lt;/svg&gt;](https://www.geogebra.org/m/Sd6mNtpU#material/Kk3AmNmc)
 
 - Si el límite de una función `\(f(\vec{x})\)` cunado `\(\vec{x}\)` tiende a `\(\vec{a}\)` existe y vale `\(l\)`, entonces el límite de esa función cuando `\(\vec{x}\)` tiende a `\(\vec{a}\)` a lo largo de cualquier trayectoria también existe y vale `\(l\)`. Por lo tanto, si para trayectorias distintas se obtienen valores del límite diferentes, se deduce que el límite de la función en ese punto **NO EXISTE**.
+---
 
-.center[
-![Límites por trayectorias](https://study.com/cimages/multimages/16/webp.net-resizeimage2782112457710762911.png)
-]
 
+## Límites (cont.)
+
+### Límite por trayectorias (cont.)
+
+.center[![límite varias variables](img/limite.png)]
+.center[.small[[Fuente:Limits of functions of two variables. Geoff Coates](https://www.student.uwa.edu.au/__data/assets/pdf_file/0010/2198602/LimitsTwoVarSlides171.pdf)]]
 ---
 
 ## Límites (cont.)
@@ -464,6 +504,9 @@ Entonces:
 ## Límites (cont.)
 
 ### Límites iterativos, sucesivos o reiterados
+`$$\color{green} {L_1 = \lim_{x\to 0}( \lim_{y\to 0} f(x,y))}\qquad \color{blue}  {L_2 = \lim_{y\to 0}( \lim_{x\to 0} f(x,y))}$$`
+
+&lt;img src="index_files/figure-html/unnamed-chunk-21-1.svg" width="35%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -471,6 +514,9 @@ Entonces:
 
 ### Coordenadas polares
 
+`$$\color{blue} {x = r\cdot \cos\alpha }\qquad \color{red}  {y = r\cdot \sin \alpha}$$`
+`$$\lim_{\forall \theta\\r\to 0} f(\theta,r)$$`
+&lt;img src="index_files/figure-html/unnamed-chunk-22-1.svg" width="30%" style="display: block; margin: auto;" /&gt;
 ---
 ## Continuidad
 
@@ -490,6 +536,8 @@ class: middle, center, inverse
 
 # Tema 1:
 ## Funciones reales de varias variables
+
+![Licencia CC BY-SA](https://licensebuttons.net/l/by-sa/3.0/88x31.png)
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
