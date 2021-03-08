@@ -553,7 +553,7 @@ $$B(\vec{x}_0,r) = \{x\in\mathbb{R}^2:d(\vec{x},\vec{x}_0)<r\} = \{\vec{x}=(x,y)
 
 
 
-```{r,engine='tikz', eval = TRUE, fig.ext = 'svg', out.width='30%', fig.align='center',cache = TRUE}
+```{r,engine='tikz', eval = TRUE, fig.ext = 'svg', out.width='30%', fig.align='center',cache = FALSE}
 
 \begin{tikzpicture}[scale=2]
 \tikzstyle{axes}=[]
@@ -590,7 +590,7 @@ $$\overline{B}(\vec{x}_0,r) = \{x\in\mathbb{R}^2:d(\vec{x},\vec{x}_0)\leq r\} = 
 
 
 
-```{r, eval = TRUE, engine='tikz', fig.ext = 'svg', out.width='30%', fig.align='center',cache = TRUE}
+```{r, eval = TRUE, engine='tikz', fig.ext = 'svg', out.width='30%', fig.align='center',cache = FALSE}
 
 \begin{tikzpicture}[scale=2]
 % Styles
@@ -631,7 +631,7 @@ $$\overline{B}(\vec{x}_0,r) = \{x\in\mathbb{R}^2:d(\vec{x},\vec{x}_0)\leq r\} = 
 
 $$B(\vec{x}_0,r) = \{x\in\mathbb{R}^3:d(\vec{x},\vec{x}_0)< r\} = \{\vec{x}=(x,y,z)\in \mathbb{R}^3:(x-x_0)^2+(y-y_0)^2+(z-z_0)^2< r^2\}$$
 
-```{r, engine='tikz', eval = TRUE, fig.ext = 'svg', out.width='25%', fig.align='center',cache = TRUE, engine.opts = list(template = "latex/tikz2pdf.tex")}
+```{r, engine='tikz', eval = TRUE, fig.ext = 'svg', out.width='25%', fig.align='center',cache = FALSE, engine.opts = list(template = "latex/tikz2pdf.tex")}
 \begin{tikzpicture}
 \begin{axis}[view={60}{30}, width=15cm, axis equal image,
              xmax=2,
@@ -665,7 +665,7 @@ $$\overline{B}(\vec{x}_0,r) = \{x\in\mathbb{R}^3:d(\vec{x},\vec{x}_0)\leq r\} = 
 
 
 
-```{r, engine='tikz', eval = FALSE, fig.ext = 'svg', out.width='25%', fig.align='center',cache = TRUE}
+```{r, engine='tikz', eval = FALSE, fig.ext = 'svg', out.width='25%', fig.align='center',cache = FALSE}
 \begin{tikzpicture}
   \shade[ball color = gray!40, opacity = 0.4, xshift=5cm] (0,0) circle (2cm);
   \draw [xshift=5cm, dashed](0,0) circle (2cm);
@@ -677,7 +677,7 @@ $$\overline{B}(\vec{x}_0,r) = \{x\in\mathbb{R}^3:d(\vec{x},\vec{x}_0)\leq r\} = 
 ```
 
 
-```{r, engine='tikz', eval = TRUE, fig.ext = 'svg', out.width='25%', fig.align='center',cache = TRUE, engine.opts = list(template = "latex/tikz2pdf.tex")}
+```{r, engine='tikz', eval = TRUE, fig.ext = 'svg', out.width='25%', fig.align='center',cache = FALSE, engine.opts = list(template = "latex/tikz2pdf.tex")}
 \begin{tikzpicture}
 \begin{axis}[view={60}{30}, width=15cm, axis equal image,
              xmax=2,
